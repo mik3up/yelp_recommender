@@ -1,0 +1,57 @@
+# Yelp recommender
+* creating a restaurant recommendation system using Yelp data
+
+* [Motivation](https://github.com/mik3up/yelp_restaurant_recommender#motivation)
+* [Data](https://github.com/mik3up/yelp_restaurant_recommender#the-data)
+* [Overview](https://github.com/mik3up/yelp_restaurant_recommender#overview)
+* [EDA & Pipeline](https://github.com/maxgrossenbacher/nlp_yelp_reviews#part-1)
+* [Web App](https://github.com/mik3up/yelp_restaurant_recommender#web-app)
+* [Conclusions](https://github.com/mik3up/yelp_restaurant_recommender#conclusion)
+* [Future Work](https://github.com/mik3up/yelp_restaurant_recommender#future-directions)
+* [Capstone Summary](https://github.com/mik3up/yelp_restaurant_recommender/blob/master/images/max_grossenbacher_poster_final.pdf)
+
+## Motivation
+
+
+
+## The Data:
+
+[Yelp's Challenge Dataset](https://www.yelp.com/dataset/challenge) provides access to millions of user reviews. I was able to isolate over ~3 M reviews of over 51,000 businesses containing the category keyword restaurant.
+
+
+## Overview
+### Goals:
+1) Provide businesses with a tool to better understand the content of the reviews left by their costumers.
+2) Encourage reviewers to leave more helpful reviews to better inform future consumer decisions.  
+
+This project can be broken down into 3 main objectives.
+#### Objective 1:
+Build a scaleable and reusable natural language processing pipeline to process reviews
+#### Objective 2:
+Find latent topics for businesses on Yelp based solely on user reviews of that business
+#### Objective 3:
+Use machine learning to predict rating, usefulness and sentiment of a review
+
+### EDA:
+This is a distribution of the average rating of all business compared to the average rating of restaurants in the Yelp business dataset. As you can see, restaurants are rated on average only slightly higher than the global business average rating.
+![alt text](images/avg_rating.png)  
+You can see a majority of reviews are rated 4 and 5 stars. The average restaurant rating is ~3.7.
+
+#### Final Models:
+Balancing classes: based on [EDA](https://github.com/maxgrossenbacher/nlp_yelp_reviews#eda) of the yelp reviews dataset, it is clear that some classes are imbalanced. For instance, there are more reviews rated 4 and 5 than there are reviews rated 3, 2 or 1. In order to account for this imbalance. Previously, I used a weighted f1 score to account for this class imbalance. However for the final models, I randomly sampled from the dataset making sure that there was an equal distribution of reviews in each class. Final models were train on 300,000 reviews (to avoid overfitting) represented as doc2vec vectors using GloVe. These models are employed in The Yelp Review Scorer to predict usefulness, sentiment and rating of a review.
+
+| Target/Label | Model | Parameters | Accuracy | F1 score |  
+|:------------:|:-----:|:----------:|:--------:|:--------:|
+| usefulness | Random Forest | max_features: sqrt; n_estimators: 1000 | 62.5% | 0.625 |  
+| sentiment | Gradient Boosted Trees | learning_rate: 0.1; max_features: sqrt; n_estimators: 500 | 68.0% | 0.680 |  
+| rating | Gradient Boosted Trees | learning_rate: 0.1; max_features: sqrt; n_estimators: 500 | 50.7% | 0.504 |  
+
+## Web App:
+[The Yelp Review Scorer](https://github.com/maxgrossenbacher/nlp_yelp_reviews/tree/master/web_app) will process a Yelp-type review and output a usefulness score, sentiment score, and suggested rating. Scores are predicted using the final models and parameters obtained [above](https://github.com/maxgrossenbacher/nlp_yelp_reviews#final-models). Have fun!
+
+## Conclusion:
+![alt text](https://github.com/maxgrossenbacher/nlp_yelp_reviews/blob/master/images/f1_score_plt_cv.png)
+Using the optimized models, we see a 28%, 25% and 30% increase in weighted F1 score for predicting rating, sentiment and usefulness of a review. Additionally, we can see that using doc2vec representations of reviews, instead of TF-IDF (bag-of-words) vectors, increases the predictive performance of each model by 46%, 34% and 31% respectively as compared to the Naive Bayes Baseline model.
+Using The Yelp Review Scorer, users may score their model for probability of usefulness as well as overall sentiment and suggested rating. Hopefully, over time, more useful reviews will improve the user experience by providing users with more helpful and relevant reviews.
+
+## Future Directions:
