@@ -1,36 +1,32 @@
 # Yelp recommender
-* creating a restaurant recommendation system using Yelp data
+creating a restaurant recommendation system using Yelp data
 
-* [Motivation](https://github.com/mik3up/yelp_restaurant_recommender#motivation)
-* [Data](https://github.com/mik3up/yelp_restaurant_recommender#the-data)
-* [Overview](https://github.com/mik3up/yelp_restaurant_recommender#overview)
-* [EDA & Pipeline](https://github.com/maxgrossenbacher/nlp_yelp_reviews#part-1)
-* [Web App](https://github.com/mik3up/yelp_restaurant_recommender#web-app)
-* [Conclusions](https://github.com/mik3up/yelp_restaurant_recommender#conclusion)
-* [Future Work](https://github.com/mik3up/yelp_restaurant_recommender#future-directions)
-* [Capstone Summary](https://github.com/mik3up/yelp_restaurant_recommender/blob/master/images/max_grossenbacher_poster_final.pdf)
+### Table of Contents
+1. [Motivation](https://github.com/mik3up/yelp_restaurant_recommender#motivation)
+2. [Data](https://github.com/mik3up/yelp_restaurant_recommender#the-data)
+3. [Overview](https://github.com/mik3up/yelp_restaurant_recommender#overview)
+4. [EDA & Pipeline](https://github.com/maxgrossenbacher/nlp_yelp_reviews#part-1)
+5. [Web App](https://github.com/mik3up/yelp_restaurant_recommender#web-app)
+6. [Conclusions](https://github.com/mik3up/yelp_restaurant_recommender#conclusion)
+7. [Future Work](https://github.com/mik3up/yelp_restaurant_recommender#future-directions)
+8. [Capstone Summary](https://github.com/mik3up/yelp_restaurant_recommender#future-directions)
 
 ## Motivation
+One of my hobbies is discovering and trying out new places to try out.
 
+I spend hours scouring Yelp, Google, Eater, and many other blogs for hints of where I can go next. However, I would rather there be a tool that knew my preferences and could recommend me places to go to based on my public user profile (i.e. Yelp)
+
+I tackled this project with this goal in mind, using machine learning to recommend me places that I have never been to yet and may like.
 
 
 ## The Data:
 
-[Yelp's Challenge Dataset](https://www.yelp.com/dataset/challenge) provides access to millions of user reviews. I was able to isolate over ~3 M reviews of over 51,000 businesses containing the category keyword restaurant.
+[Yelp's Challenge Dataset](https://www.yelp.com/dataset/challenge) provides access to over 6.6 million user reviews.
 
 
 ## Overview
-### Goals:
-1) Provide businesses with a tool to better understand the content of the reviews left by their costumers.
-2) Encourage reviewers to leave more helpful reviews to better inform future consumer decisions.  
 
-This project can be broken down into 3 main objectives.
-#### Objective 1:
-Build a scaleable and reusable natural language processing pipeline to process reviews
-#### Objective 2:
-Find latent topics for businesses on Yelp based solely on user reviews of that business
-#### Objective 3:
-Use machine learning to predict rating, usefulness and sentiment of a review
+
 
 ### EDA:
 This is a distribution of the average rating of all business compared to the average rating of restaurants in the Yelp business dataset. As you can see, restaurants are rated on average only slightly higher than the global business average rating.
@@ -55,3 +51,6 @@ Using the optimized models, we see a 28%, 25% and 30% increase in weighted F1 sc
 Using The Yelp Review Scorer, users may score their model for probability of usefulness as well as overall sentiment and suggested rating. Hopefully, over time, more useful reviews will improve the user experience by providing users with more helpful and relevant reviews.
 
 ## Future Directions:
+
+## Capstone Summary
+<img src = "img/YUM_ME_about.jpg">
