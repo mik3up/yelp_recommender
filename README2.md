@@ -6,7 +6,7 @@ creating a restaurant recommendation system using Yelp data
 2. [Data](https://github.com/mik3up/yelp_restaurant_recommender#the-data)
 3. [Overview](https://github.com/mik3up/yelp_restaurant_recommender#overview)
 4. [EDA & Pipeline](https://github.com/maxgrossenbacher/nlp_yelp_reviews#part-1)
-5. [Web App](https://github.com/mik3up/yelp_restaurant_recommender#web-app)
+5. [Web Demo](https://github.com/mik3up/yelp_restaurant_recommender#web-app)
 6. [Conclusions](https://github.com/mik3up/yelp_restaurant_recommender#conclusion)
 7. [Future Work](https://github.com/mik3up/yelp_restaurant_recommender#future-directions)
 8. [Capstone Summary](https://github.com/mik3up/yelp_restaurant_recommender#future-directions)
@@ -25,7 +25,7 @@ I tackled this project with this goal in mind, using machine learning to recomme
 
 
 ## Overview
-
+test
 
 
 ### EDA:
@@ -34,8 +34,6 @@ This is a distribution of the average rating of all business compared to the ave
 You can see a majority of reviews are rated 4 and 5 stars. The average restaurant rating is ~3.7.
 
 #### Final Models:
-Balancing classes: based on [EDA](https://github.com/maxgrossenbacher/nlp_yelp_reviews#eda) of the yelp reviews dataset, it is clear that some classes are imbalanced. For instance, there are more reviews rated 4 and 5 than there are reviews rated 3, 2 or 1. In order to account for this imbalance. Previously, I used a weighted f1 score to account for this class imbalance. However for the final models, I randomly sampled from the dataset making sure that there was an equal distribution of reviews in each class. Final models were train on 300,000 reviews (to avoid overfitting) represented as doc2vec vectors using GloVe. These models are employed in The Yelp Review Scorer to predict usefulness, sentiment and rating of a review.
-
 | Target/Label | Model | Parameters | Accuracy | F1 score |  
 |:------------:|:-----:|:----------:|:--------:|:--------:|
 | usefulness | Random Forest | max_features: sqrt; n_estimators: 1000 | 62.5% | 0.625 |  
