@@ -97,18 +97,70 @@
 			}
 		</script>
 
+		<style>
+			h3 span { font-size:16px; }
+
+			table {
+			  border-collapse: collapse;
+			  width: 100%;
+			}
+
+			td, th {
+			  border: 1px solid #dddddd;
+			  text-align: left;
+			  padding: 8px;
+			}
+
+			/* mouse over link */
+			a:hover {
+			  color: hotpink;
+			}
+
+			/* selected link */
+			a:active {
+			  color: blue;
+			}
+
+		</style>
+
 		<div class="colorlib-services colorlib-bg-white">
 			<div class="container">
 				<center>
+
+					<h3><font color = #0073bb>Background</font></h3>
+
+					<font color="#135258">
+						<table>
+						  	<td>Background</td>
+						  	<td>Yelp is one of the best services to find restaurants!</td>
+						  </tr>
+						  <tr>
+						    <td>Problem</td>
+						    <td>Searching for a restaurant takes time! And you may not find what you are looking for!</td>
+						  </tr>
+						  <tr>
+						    <td>Solution</td>
+						    <td>Create a restaurant recommender system (think netflix for restaurants) that utilizes your Yelp profile ratings, and finds new restaurants tailored for you</td>
+						  </tr>
+						  <tr>
+						    <td>YUM-ME!</td>
+						    <td>YUM-ME! is a data science project powered by 7 million reviews across Las Vegas & Phenoix region to make recommendations.</td>
+						  </tr>
+						</table>
+					</font>
+
+					<br>
+
+
 					<h3><font color = #0073bb>Try the demo!</font></h3>
-					<h3><font color = #228B22>Please select a user profile icon below!</h3></font>
-					(All of these user profiles are based in the Las Vegas region)</p>
+					<h3><font color = #228B22>Please select a profile icon below!</h3></font>
+					(All of these user profiles are based in the Las Vegas region and were created to demostrate this idea since it does not have your Yelp profile)</p>
 				</center>
 				<div class="row">
 						<div class="col-md-4 text-center animate-box">
 							<div class="services">
 								<span class="icon">
-									<a href="#target" onclick="framechange('html_profiles/profile_a_vegas.html','html_profiles/profile_a_phoenix.html');"><img src='images/user_icon_red.png', width="18%"></a>
+									<a href="#target" onclick="framechange('html_profiles/profile_a_vegas.html','html_profiles/profile_a_phoenix.html');"><img src='images/user_icon_red.png', width="18%" style="opacity:1;filter:alpha(opacity=100)" onmouseout="this.style.opacity=1;this.filters.alpha.opacity=100" onmouseover="this.style.opacity=0.6;this.filters.alpha.opacity=60"></a>
 								</span>
 								<div class="desc">
 									<h3><a href="#target" onclick="framechange('html_profiles/profile_a_vegas.html','html_profiles/profile_a_phoenix.html');">Profile A</a></h3>
@@ -128,7 +180,7 @@
 						<div class="col-md-4 text-center animate-box">
 							<div class="services">
 								<span class="icon">
-									<a href="#target" onclick="framechange('html_profiles/profile_b_vegas.html','html_profiles/profile_b_phoenix.html');"><img src='images/user_icon_blue.png', width=18%></a>
+									<a href="#target" onclick="framechange('html_profiles/profile_b_vegas.html','html_profiles/profile_b_phoenix.html');"><img src='images/user_icon_blue.png', width=18% style="opacity:1;filter:alpha(opacity=100)" onmouseout="this.style.opacity=1;this.filters.alpha.opacity=100" onmouseover="this.style.opacity=0.6;this.filters.alpha.opacity=60"></a>
 								</span>
 								<div class="desc">
 									<h3><a href="#target" onclick="framechange('html_profiles/profile_b_vegas.html','html_profiles/profile_b_phoenix.html');">Profile B</a></h3>
@@ -148,7 +200,7 @@
 						<div class="col-md-4 text-center animate-box">
 							<div class="services">
 								<span class="icon">
-									<a href="#target" onclick="framechange('html_profiles/profile_c_vegas.html','html_profiles/profile_c_phoenix.html');"><img src='images/user_icon_green.png', width=18%></a>
+									<a href="#target" onclick="framechange('html_profiles/profile_c_vegas.html','html_profiles/profile_c_phoenix.html');"><img src='images/user_icon_green.png', width=18% style="opacity:1;filter:alpha(opacity=100)" onmouseout="this.style.opacity=1;this.filters.alpha.opacity=100" onmouseover="this.style.opacity=0.6;this.filters.alpha.opacity=60"></a>
 								</span>
 								<div class="desc">
 									<h3><a href="#target" onclick="framechange('html_profiles/profile_c_vegas.html','html_profiles/profile_c_phoenix.html');">Profile C</a></h3>
@@ -173,13 +225,14 @@
 		<div class="colorlib-blog">
 			<div class="container">
 				<div class="row">
+					<center><h3><font color = "#228B22">Based on the profile rating, here are the recommendations</h3></center></font>
 					<div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
 						<a name="target"></a>
-						<h3>Your Personalized Las Vegas Recommendations</h3>
+						<h3>Las Vegas Recommendations</h3>
 						<iframe id="iframe_vegas" height="400px" width="100%" src="html_profiles/profile_a_vegas.html" name="iframe_vegas"></iframe>
 					</div>
 					<div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
-						<h3>Your Personalized Phoenix Recommendation</h3>
+						<h3>Phoenix Recommendation</h3>
 						<iframe id="iframe_phoenix" height="400px" width="100%" src="html_profiles/profile_a_phoenix.html" name="iframe_phoenix"></iframe>
 					</div>
 				</div>
